@@ -11,11 +11,15 @@ class BaiDuSearch(unittest.TestCase):
         driver= self.driver
         driver.get('https://www.baidu.com')
         driver.find_element_by_id('kw').send_keys('Hello World')
+ 
         driver.find_element_by_id('kw').send_keys(Keys.ENTER)
     
     # TODO
     def test_bing_search(self):
         pass
+
+    def test_link_text(self):
+
 
     def tearDown(self):
         self.driver.quit()
