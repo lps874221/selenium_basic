@@ -1,5 +1,6 @@
 import unittest
 from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
 """
 测试账户:
 用户名：user1  
@@ -20,19 +21,31 @@ class Cnode(unittest.TestCase):
         self.driver.find_element_by_id('pass').send_keys('123456')
         # 登陆
         self.driver.find_element_by_css_selector('input[type="submit"]').click()
-"""
-登陆成功后,页面导航到首页
-发布话题的操作
-1.首页点击发布话题--话题发布页面
-2.选择一个版块
-3.输入标题
-4.输入文本
-5.提交
 
-请将上述5步操作在下面test_post中实现
-"""
+        """
+        登陆成功后,页面导航到首页
+        发布话题的操作
+        1.首页点击发布话题--话题发布页面
+        2.选择一个版块
+        3.输入标题
+        4.输入文本
+        5.提交
+
+        请将上述5步操作在下面test_post中实现
+        """
     def test_post_topic(self):
-        pass
+        driver = self.driver
+
+        driver.get('http://39.107.96.138:3000/topic/create')
+        driver.find_element_by_id('tab-value').click()
+        driver.find_element_by_css_selector('[value="share"]').click()
+
+        driver.find_element_by_id('title').send_keys('xxxxxxxx')
+
+        content_area = driver.find_element_by_class_name('CodeMirror-scroll')
+        content_area.click()
+
+        ActionChains(driver).move_to_element(content_area).send_keys('xxxxxxxxxxxx').perform()
 
 
 
