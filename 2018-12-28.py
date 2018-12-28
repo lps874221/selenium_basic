@@ -22,6 +22,8 @@ class Cnode(unittest.TestCase):
         # 登陆
         self.driver.find_element_by_css_selector('input[type="submit"]').click()
 
+
+    def test_post_topic(self):
         """
         登陆成功后,页面导航到首页
         发布话题的操作
@@ -33,7 +35,7 @@ class Cnode(unittest.TestCase):
 
         请将上述5步操作在下面test_post中实现
         """
-    def test_post_topic(self):
+        
         driver = self.driver
 
         driver.get('http://39.107.96.138:3000/topic/create')
