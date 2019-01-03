@@ -28,7 +28,7 @@ class Cnode(unittest.TestCase):
 
     def tearDown(self):
         self.driver.save_screenshot('./01.png')
-        self.driver.quit()
+        # self.driver.quit()
 
 
 if __name__ == "__main__":
