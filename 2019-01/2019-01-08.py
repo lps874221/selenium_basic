@@ -25,6 +25,10 @@ actions = ActionChains(driver)
 actions.move_to_element(content_area)
 actions.send_keys("abc")
 
+actions.key_down(Keys.COMMAND)
+actions.send_keys('a')
+actions.key_up(Keys.COMMAND)
+
 # 在文本输入里面模拟快捷键 Ctrl + b 操作
 
 actions.key_down(Keys.COMMAND)
